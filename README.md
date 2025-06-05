@@ -24,3 +24,4 @@ cd component-linter
 npm install
 npm run dev lint example/MyComponent.tsx
 ```
+# component-linter
