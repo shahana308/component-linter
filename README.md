@@ -1,20 +1,20 @@
 # Component Linter
 
-A CLI tool to statically analyze and suggest improvements for React/TypeScript components.
+A lightweight CLI tool to statically analyze your **React + TypeScript** components and help you write cleaner, more consistent code.
 
-## Goals
+## What it Does
 
-- Warn on component naming violations
-- Enforce filename = component name
-- Check for cohesion (too many hooks, big JSX)
-- Suggest reusable patterns (avoid inline styles, extract subcomponents)
+- Warns if component names aren't in **PascalCase**
+- Ensures the **filename matches the component name**
+- Detects **low cohesion** (e.g., too many hooks or a massive JSX block)
+- Suggests reusable patterns (e.g., avoid inline styles, extract subcomponents)
 
-## Tech Stack
+## Built With
 
-- **TypeScript**
-- **ts-morph** for AST parsing
-- **commander** for CLI
-- **chalk** for colorful output
+- **TypeScript** – for type-safe tooling
+- **ts-morph** – to parse and walk the AST
+- **commander** – for building the CLI interface
+- **chalk** – for pretty terminal output
 
 ## Getting Started
 
@@ -23,4 +23,3 @@ git clone https://github.com/your-username/component-linter
 cd component-linter
 npm install
 npm run dev lint example/MyComponent.tsx
-```
