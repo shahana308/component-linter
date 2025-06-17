@@ -1,6 +1,9 @@
 {
   "name": "component-linter",
   "version": "1.0.0",
+  "bin": {
+    "component-linter": "./dist/cli.js"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "ts-node src/cli.ts",
