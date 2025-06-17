@@ -18,8 +18,29 @@ A lightweight CLI tool to statically analyze your **React + TypeScript** compone
 
 ## Getting Started
 
+### Install via npm
+
 ```bash
-git clone https://github.com/your-username/component-linter
-cd component-linter
-npm install
-npm run dev lint example/MyComponent.tsx
+npm install -D component-linter
+```
+
+### Run the linter
+```
+npx component-linter lint path/to/YourComponent.tsx
+# or
+npx component-linter lint src/components/
+```
+
+### Add a script to package,json
+```
+"scripts": {
+  "lint:components": "component-linter lint src/components/"
+}
+```
+
+Then run:
+```
+npm run lint:components
+```
+
+More rules and features coming soon! 
