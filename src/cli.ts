@@ -3,8 +3,8 @@ import { Command } from "commander";
 import { Project } from "ts-morph";
 import path from "path";
 import fs from "fs";
-import { checkNamingRules } from "./rules/namingRule";
 import { getAllTsxFiles } from "./utils/getAllTsxFiles";
+import { rules } from "./rules";
 
 const program = new Command();
 
@@ -32,12 +32,13 @@ program
 
     files.forEach((file: any) => {
       const sourceFile = project.addSourceFileAtPath(file);
-      const issues = checkNamingRules(sourceFile, file);
-
-      if (issues.length > 0) {
-        console.log(`\nIssues in ${file}`);
-        issues.forEach((i) => console.log(" -", i));
-      }
+      rules.forEach((ruleFn) => {
+        const issues = ruleFn(sourceFile, file);
+        if (issues.length) {
+          console.log(`\n🚨 Issues in ${file}`);
+          issues.forEach((i: string) => console.log(" -", i));
+        }
+      });
     });
 
     console.log("\n✅ Linting complete.");
