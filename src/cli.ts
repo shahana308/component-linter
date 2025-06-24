@@ -35,13 +35,13 @@ program
       rules.forEach((ruleFn) => {
         const issues = ruleFn(sourceFile, file);
         if (issues.length) {
-          console.log(`\n🚨 Issues in ${file}`);
+          console.log(`\nIssues in ${file}`);
           issues.forEach((i: string) => console.log(" -", i));
         }
       });
     });
 
-    console.log("\n✅ Linting complete.");
+    console.log("\nLinting complete.");
   });
 
 program.parse();
