@@ -1,14 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkLengthRule = checkLengthRule;
 const ts_morph_1 = require("ts-morph");
-const path_1 = __importDefault(require("path"));
-function checkLengthRule(sourceFile, filePath) {
+function checkLengthRule(sourceFile) {
     const issues = [];
-    const fileName = path_1.default.basename(filePath, path_1.default.extname(filePath));
     const defaultExport = sourceFile
         .getDefaultExportSymbol()
         ?.getDeclarations()[0];
