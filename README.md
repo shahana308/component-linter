@@ -8,6 +8,7 @@ A CLI tool to statically analyze and suggest improvements for React/TypeScript c
 - Enforce filename = component name
 - Check for cohesion (too many hooks, big JSX)
 - Suggest reusable patterns (avoid inline styles, extract subcomponents)
+- Warns on usage of **inline styles** (`style={{ ... }}`)
 
 ## Tech Stack
 
