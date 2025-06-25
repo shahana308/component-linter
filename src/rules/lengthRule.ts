@@ -1,13 +1,8 @@
 import { SourceFile, ts } from "ts-morph";
-import path from "path";
 
-export function checkLengthRule(
-  sourceFile: SourceFile,
-  filePath: string
-): string[] {
+export function checkLengthRule(sourceFile: SourceFile): string[] {
   const issues: string[] = [];
 
-  const fileName = path.basename(filePath, path.extname(filePath));
   const defaultExport = sourceFile
     .getDefaultExportSymbol()
     ?.getDeclarations()[0];
